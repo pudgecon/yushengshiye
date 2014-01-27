@@ -16,10 +16,12 @@
   <body class="<%= page_classes %>">
     <div class="container content">
       <div class="header">
-        <a class="brand" href="/"><h1>禹盛石业</h1></a>
+        <% link_to "/", class: "brand" do %>
+          <h1>禹盛石业</h1>
+        <% end %>
         <div class="nav">
           <ul>
-            <li><a href="#">我们的产品</a></li>
+            <li><%= nav_link_to "我们的产品", "/products.html" %></li>
             <li><a href="#">我们的产品</a></li>
             <li><a href="#">我们的产品</a></li>
             <li><a href="#">关于禹盛</a></li>
