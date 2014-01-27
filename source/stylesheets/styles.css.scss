@@ -13,7 +13,6 @@ body {
   top: 50%;
   height: 50px;
   width: 50px;
-  background: rgba(255, 255, 255, 0.2);
   color: white;
   .glyphicon {
     top: 18px;
@@ -23,6 +22,7 @@ body {
   &:hover {
     color: white;
     text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
   }
   &.left {
     left: 0;
@@ -91,7 +91,7 @@ body > .content {
           a {
             color: #424242;
             padding: 0 10px;
-            &:hover {
+            &.active, &:hover {
               color: #8ec640;
               text-decoration:none;
             }
@@ -107,6 +107,7 @@ body > .content {
       .item {
         img {
           min-height: 300px;
+          margin: 0 auto;
         }
       }
     }
