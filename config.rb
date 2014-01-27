@@ -31,6 +31,22 @@
 ###
 # Helpers
 ###
+helpers do
+  def nav_link_to(name, url, options={})
+    options = {
+      class: "",
+      active_if: url,
+      page: current_page.url,
+    }.update options
+
+    a = options.delete(:active_if)
+
+    active = Regexp === a ? current_page.url =~ a : current_page.url == a
+    options[:class] += " active" if active
+
+    link_to name, url, options
+  end
+end
 
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
