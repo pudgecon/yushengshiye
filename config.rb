@@ -61,6 +61,8 @@ end
 #   end
 # end
 
+activate :i18n, :langs => ['zh-CN', 'en']
+
 set :css_dir, 'stylesheets'
 
 set :js_dir, 'javascripts'
