@@ -1,0 +1,68 @@
+---
+zh-CN:
+  brand: "禹盛石业"
+  welcome: "禹盛石业欢迎您"
+  terms_of_use: "使用条款"
+  privacy_policy: "隐私权政策"
+  disclaimer: "免责声明"
+  menu:
+    home: "首页"
+    products: "产品展示"
+    projects: "工程案例"
+    factory_and_processing: "工厂与生产"
+    factory: "工厂"
+    processing: "生产"
+    about_us: "关于禹盛"
+    contact_us: "联系我们"
+  index:
+    factory: "工厂"
+    machine: "机器"
+    quarry: "矿山"
+  projects:
+    menu:
+      projects: "工程案例"
+  factory_and_processing:
+    menu:
+      factory: "工厂"
+      processing: "生产"
+  products:
+    menu:
+      marble: "大理石系列"
+      imported_marble: "进口大理石"
+      chinese_marble: "国产大理石"
+      imported_marble_slab: "进口大理石大板"
+      chinese_marble_slab: "国产大理石大板"
+      granite: "花岗岩系列"
+      imported_granite: "进口花岗岩"
+      chinese_granite: "国产花岗岩"
+      imported_granite_slab: "进口花岗岩大板"
+      chinese_granite_slab: "国产花岗岩大板"
+      onyx: "玉石系列"
+      water_jet: "拼花系列"
+      mosaic: "马赛克系列"
+      thin_tile: "工厂薄板系列"
+  about_us:
+    menu:
+      company: "公司"
+      products: "产品"
+      cooperation: "合作"
+    content:
+      company: "禹盛石业是座落于世界石材集散中心中国水头，从事石材行业十来年以来，涵盖国内业务与出口业务。随着业务的拓展，目前我们主要从土耳其，意大利,伊朗，巴基斯坦等国家进口大理石优质原材料进行加工生产。现在我公司主要经营品种主要有橄榄灰，白玉兰，西班牙米黄，浅青玉等品种。"
+      products: "我公司致力于石材出口，涵盖了大理石，花岗岩，人造石，玉石，水刀拼花，复合板，马赛克，圆柱等。出口国家包括马来西亚，菲律宾，新加坡，印度，越南，印度尼西亚，俄罗斯，迪拜，埃及，加拿大，美国等国家。数年以来的经验，以及专业的出口服务，在客户群当中树立了良好的口碑。我们对于任何一个客户都争取做到最好，无论您来自哪里。相信我们能够成为您长期稳定以及值得信赖的合作伙伴。"
+      cooperation: "禹盛石业期待与您的合作！"
+  contact_us:
+      title:
+        company: "禹盛石业有限公司"
+        factory: "工厂"
+        office: "办公"
+        tel: "电话"
+        mob: "手机"
+        fax: "传真"
+        email: "邮箱"
+      content:
+        factory: "福建省南安市水头镇滨海工业区宝荣石材精品中心"
+        office: "福建省南安市水头镇滨海工业区高时物流园312室"
+        tel: "86-595-86676965"
+        mob: "86-13599781187"
+        fax: "86-595-86676986"
+        email: "info@esonstonechina.com"
