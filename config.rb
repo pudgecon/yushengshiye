@@ -32,16 +32,26 @@
 # Helpers
 ###
 helpers do
-  def nav_link_to(name, url, options={})
+  def link_to(*args, &block)
+    url_arg_index = block_given? ? 0 : 1
+    if url = args[url_arg_index]
+      #new_url = "/#{I18n.locale}#{url}"
+      #new_url = "/en#{url}" if I18n.locale == :en
+      new_url = I18n.locale == :en ? "/en#{url}" : url
+      args[url_arg_index] = new_url
+    end
+
+    super(*args, &block)
+  end
+
+  def nav_link_to(name, url, options = {})
     options = {
-      class: "",
-      active_if: url,
-      page: current_page.url,
-    }.update options
+      class: ""
+    }.update(options)
 
-    a = options.delete(:active_if)
+    new_url = I18n.locale == :en ? "/en#{url}" : url
+    active = Regexp === new_url ? current_page.url =~ new_url : current_page.url == new_url
 
-    active = Regexp === a ? current_page.url =~ a : current_page.url == a
     options[:class] += " active" if active
 
     link_to name, url, options
