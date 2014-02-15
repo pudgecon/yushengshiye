@@ -1,0 +1,37 @@
+---
+title: 国产大理石 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "黑白根Black Marquina less vein",
+    "国产黑金花Chinese Black and Gold",
+    "国产啡网Chinese Dark Emperador",
+    "水晶白Crystal White",
+    "杜鹃红Cuckoo Red",
+    "欧网Euro Emperador",
+    "古木纹Forest black",
+    "灰木纹Grey Wood",
+    "广西百Guangxi White",
+    "杭灰Hang Grey",
+    "松香玉Honey Onyx",
+    "黑白根Nero Marquina more veins",
+    "金钱花Oscar Flower 1",
+    "皇室木纹Royal Wood",
+    "霸王花Bawang Flower"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/marbles/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

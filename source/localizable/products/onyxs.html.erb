@@ -1,0 +1,61 @@
+---
+title: 玉石系列 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "白玉Whtie Onyx (1)",
+    "白玉Whtie Onyx (2)",
+    "山水玉Landscape Onyx (1)",
+    "山水玉Landscape Onyx (2)",
+    "山水玉Landscape Onyx (3)",
+    "古青玉Dark Green Onyx",
+    "古青玉Antique Forest",
+    "白底老虎玉White Tiger Onyx",
+    "红底老虎玉Red Tiger Onyx",
+    "红底老虎玉对拼Red Tiger Onyx book matched",
+    "紫玉Pink Onyx (1)",
+    "紫玉Pink Onyx",
+    "浅橘子玉Light Orange Onyx (1)",
+    "浅橘子玉Light Orange Onyx (2)",
+    "浅橘子玉Light Orange Onyx",
+    "橘子玉Orange Onxy (1)",
+    "橘子玉Orange Onxy (2)",
+    "橘子玉Orange Onxy (3)",
+    "橘子玉Orange Onxy (4)",
+    "松香玉Honey Onyx (1)",
+    "松香玉Honey Onyx (2)",
+    "松香玉Honey Onyx",
+    "咖啡玉Coffe Brown Onyx",
+    "孔雀玉Peacok onyx (1)",
+    "孔雀玉Peacok onyx (2)",
+    "彩虹玉Rainbow Onyx",
+    "麒麟玉Kylin Onyx (1)",
+    "麒麟玉Kylin Onyx",
+    "红龙玉Red Dragon onyx (5)",
+    "红龙玉Red dragon onyx (1)",
+    "红龙玉Red dragon onyx (2)",
+    "红龙玉Red dragon onyx (3)",
+    "红龙玉Red dragon onyx (4)",
+    "红龙玉Red dragon onyx",
+    "蓝色牛仔Fantasy Blue (2)",
+    "蓝色牛仔Fantasy blue (1)",
+    "玉石对拼Onyx Book match (1)",
+    "玉石对拼Onyx Book match (2)",
+    "玉石对拼Onyx Book match (3)"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/onyxs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

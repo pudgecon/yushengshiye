@@ -1,0 +1,26 @@
+---
+title: 拼花系列 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "水刀拼花 Water jet (1)",
+    "水刀拼花 Water jet (2)",
+    "水刀拼花 Water jet (3)",
+    "水刀拼花 Water jet (4)",
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/water_jets/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

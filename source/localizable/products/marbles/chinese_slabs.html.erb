@@ -1,0 +1,64 @@
+---
+title: 国产大理石大板 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "国产啡网Chinese Dark Emperador",
+    "黑白根多根Black Marquina more vein",
+    "黑白根少根Black Marquina less vein",
+    "黑木纹Black Wood",
+    "皇家金檀反切Black Mink",
+    "金镶玉Sant Laurnt (1)",
+    "金镶玉Sant Laurnt (2)",
+    "银貂Sliver Ermine",
+    "古木纹Black Forest (1)",
+    "古木纹Black Forest (2)",
+    "古木纹Black Forest (3)",
+    "古木纹Black Forest (4)",
+    "阿波罗Apolo",
+    "君子兰Chinese Green (1)",
+    "君子兰Chinese Green (2)",
+    "广西白扶手Guangxi White handrail",
+    "广西白栏杆柱Guangxi White baluster",
+    "广西白Guangxi White (1)",
+    "广西白Guangxi White (2)",
+    "广西白Guangxi White (3)",
+    "广西白规格板Guangxi White cut to size",
+    "杭灰Hang Grey",
+    "白木纹White Wood (1)",
+    "白木纹White Wood (2)",
+    "雅典木纹Athen Wood (1)",
+    "雅典木纹Athen Wood (2)",
+    "波斯灰Persia Grey",
+    "皇室木纹Royal Wood",
+    "灰木纹Grey Wood (1)",
+    "灰木纹Grey Wood (2)",
+    "欧网Euro Emperador",
+    "杜鹃红Cuckoo Red",
+    "银白龙Portoro Silver (1)",
+    "银白龙Portoro Silver (2)",
+    "银白龙Portoro Silver (3)",
+    "甲骨文Oracle Bone (1)",
+    "甲骨文Oracle Bone (2)",
+    "霸王花Bawang Flower",
+    "安琪米黄California Beige",
+    "东方白Oriental White (1)",
+    "东方白Oriental White (2)",
+    "山水画Chinese Landscape"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/marbles/chinese_slabs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

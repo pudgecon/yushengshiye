@@ -1,0 +1,42 @@
+---
+title: 工程案例 - 禹盛石业
+---
+
+<div class="row">
+  <div class="col-md-3">
+    <ul class="menu" id="menu">
+      <li><%= nav_link_to t("projects.menu.projects"), "/projects.html" %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <% [
+      "案例project",
+      "土耳其洞石工程Turkey Travertine Project (1)",
+      "土耳其洞石工程Turkey Travertine Project (2)",
+      "德国米黄工程German Beige Project (1)",
+      "德国米黄工程German Beige Project (2)",
+      "意大利木纹工程Italy Serpenggiante Project (1)",
+      "意大利木纹工程Italy Serpenggiante Project (2)",
+      "意大利木纹工程Italy Serpenggiante Project (3)",
+      "意大利木纹工程Italy Serpenggiante Project (4)",
+      "斯拉夫白工程Sivec White Project (1)",
+      "斯拉夫白工程Sivec White Project (2)",
+      "斯拉夫白工程Sivec White Project (3)",
+      "斯拉夫白工程Sivec White Project (4)",
+      "斯拉夫白工程Sivec White Project (5)",
+      "斯拉夫白工程Sivec White Project (6)",
+      "斯拉夫白工程Sivec White Project (7)",
+      "白玉兰工程White Pearl Project"
+    ].each do |s| %>
+      <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+    <div class="col-md-10 col-md-offset-1 img detail">
+      <div class="title">
+        <h4><%= m[1] %> <%= m[2].split(' ').map(&:capitalize).join(' ') %> <%= m[4] %></h4>
+      </div>
+      <img src="/images/projects/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+    </div>
+
+    <% end %>
+  </div>
+</div>

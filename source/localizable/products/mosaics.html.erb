@@ -1,0 +1,26 @@
+---
+title: 马赛克系列 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "马赛克 Mosaic (1)",
+    "马赛克 Mosaic (2)",
+    "马赛克 Mosaic (3)",
+    "马赛克 Mosaic (4)",
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/mosaics/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

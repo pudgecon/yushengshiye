@@ -1,0 +1,59 @@
+---
+title: 进口花岗岩大板 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "黑金沙Black Galaxy",
+    "七彩啡Labrador Antico",
+    "比萨金麻Golden Persa",
+    "奥文镀金Giallo Oranmental",
+    "克什米尔金Kashmir Gold",
+    "幻彩紫Parodiso",
+    "河流白River White",
+    "娱乐金麻Giallo Cecilia",
+    "帝王金Golden King",
+    "爱迪达Saphire Brown",
+    "安哥拉棕Antique Brown",
+    "加洲金麻Juparana California",
+    "巴西金Giallo Brazil",
+    "凤尾银麻Aran White",
+    "古典木纹啡Juparana Classico",
+    "加里奥金Carioco Gold",
+    "金钻花麻Diamond Giallo",
+    "蓝眼睛Blue Eyes",
+    "圣地亚哥红Santiago Red",
+    "莎利士红Sallisbury Pink",
+    "热带绿Tropical Green",
+    "木头黄金Wooden Gold",
+    "幻彩红Multicolor Red",
+    "幻彩绿Paradiso Green",
+    "紫点金麻Giallo Cecilia",
+    "老虎黄Tiger Yellow",
+    "卵石绿Green Marina",
+    "香槟金麻Samoa",
+    "奥运金麻White Solar",
+    "水晶金麻Giallo Farfalla",
+    "树挂冰花St Louis",
+    "印度白金White Galaxy",
+    "印度红Imperial Red (1)",
+    "印度红Imperial Red (2)",
+    "银珠Silver Pearl",
+    "奥文镀金Giallo Oranmental",
+    "桃木珍珠Mahogany Dakota"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/granites/imported_slabs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

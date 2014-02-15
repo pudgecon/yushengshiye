@@ -1,0 +1,61 @@
+---
+title: 进口大理石大板 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "爵士白Vilakos White Slope Vein",
+    "爵士白Vilakos White points vein",
+    "爵士白Vilakos White random vein",
+    "蒂诺米黄Dino Beige Slope Vein",
+    "蒂诺米黄Dino Beige Straight Vein",
+    "诺娃米黄Crema nuova",
+    "奥特曼米黄Ultaman Beige (1)",
+    "奥特曼米黄Ultaman Beige (2)",
+    "水晶浅啡Crytal Light Emperador (1)",
+    "水晶浅啡Crytal Light Emperador (2)",
+    "西班牙深啡网Spanish Dark Emperador (1)",
+    "西班牙深啡网Spanish Dark Emperador (2)",
+    "木化石Moca Cream (1)",
+    "木化石Moca Cream (2)",
+    "旧米黄Bottoccino Classic (1)",
+    "旧米黄Bottoccino Classic (2)",
+    "旧米黄Bottoccino Classic (3)",
+    "越南水晶白Vietnam White",
+    "热带雨林棕Rainforest Brown (1)",
+    "热带雨林棕Rainforest Brown (2)",
+    "金蜘蛛Golder Spider",
+    "热带雨林绿Rainforst Green",
+    "卡布奇诺米黄Cappuccino",
+    "阿曼米黄Classic Beige",
+    "意大利凯越红Italy Kaiyue Red",
+    "埃及米黄Egypt Beige",
+    "珊瑚红Spanish Roja Alicante (1)",
+    "珊瑚红Spanish Roja Alicante (2)",
+    "金碧辉煌Sunny Beige",
+    "直纹白Marmara White",
+    "卡拉拉白Carara White",
+    "金线米黄Silvia marble",
+    "白玉兰White Peral",
+    "浅啡网Light Emperador (1)",
+    "浅啡网Light Emperador (2)",
+    "雪花白Statuario",
+    "橙皮红Diana Rose",
+    "西班牙米黄Cream Marfil",
+    "白玫瑰Rose White"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/marbles/imported_slabs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

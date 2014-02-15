@@ -1,0 +1,40 @@
+---
+title: 生产 - 产品展示 - 禹盛石业
+layout: 'factory_and_processing'
+---
+
+<div class="row">
+  <% [
+    "荒料储存The Storage of Blocks (1)",
+    "荒料储存The Storage of Blocks (2)",
+    "荒料储存The Storage of Blocks (3)",
+    "荒料切割Blocks cutting (1)",
+    "荒料切割Blocks cutting (2)",
+    "荒料切割Blocks cutting (3)",
+    "Make protection of the side",
+    "大板晾干与背网Dry the slab and back netting (1)",
+    "大板晾干与背网Dry the slab and back netting (2)",
+    "大板晾干与背网Dry the slab and back netting (3)",
+    "大板晾干与背网Dry the slab and back netting (4)",
+    "刷胶gluing (1)",
+    "刷胶gluing (2)",
+    "磨光Polishing (1)",
+    "磨光Polishing (2)",
+    "磨光Polishing (3)",
+    "工程板切割与排版cut to size and typest (1)",
+    "工程板切割与排版cut to size and typest (2)",
+    "工程板切割与排版cut to size and typest (3)",
+    "工程板切割与排版cut to size and typest (4)",
+    "工程板切割与排版cut to size and typest (5)"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]*)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-10 col-md-offset-1 img detail">
+    <div class="title">
+      <h4><%= m[1] %> <%= m[2].split(' ').map(&:capitalize).join(' ') %> <%= m[4] %></h4>
+    </div>
+    <img src="/images/factory_and_processing/processing/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+  </div>
+
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+---
+title: 工厂薄板系列 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    "工厂 Factory (1)",
+    "工厂 Factory (2)",
+    "工厂 Factory (3)",
+    "工厂 Factory (4)",
+    "工厂 Factory (4)",
+    "工厂 Factory (6)",
+    "工厂 Factory (7)",
+    "灰木纹大理石 Grey Wood Marble",
+    "白木纹大理石 White Wood Marble (1)",
+    "白木纹大理石 White Wood Marble (2)"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/thin_tiles/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>

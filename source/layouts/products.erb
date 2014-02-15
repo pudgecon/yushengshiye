@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || t(:welcome) %></title>
+
+    <%= stylesheet_link_tag "normalize", "bootstrap.min", "styles" %>
+    <%= javascript_include_tag "all" %>
+  </head>
+
+  <body class="<%= page_classes %>">
+    <div class="container content">
+      <%= partial "header" %>
+
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="menu" id="menu">
+            <%#<li><a class="title" href="#">所有产品</a></li>%>
+            <li>
+              <%= nav_link_to t("products.menu.marble"), "#marble",  "data-toggle" => "collapse", "data-parent" => "#menu" %>
+              <ul id="marble" class="sub-menu panel-collapse collapse">
+                <li><%= nav_link_to t("products.menu.imported_marble"), "/products/marbles/imported.html" %></li>
+                <li><%= nav_link_to t("products.menu.imported_marble_slab"), "/products/marbles/imported_slabs.html" %></li>
+                <li><%= nav_link_to t("products.menu.chinese_marble"), "/products/marbles/chinese.html" %></li>
+                <li><%= nav_link_to t("products.menu.chinese_marble_slab"), "/products/marbles/chinese_slabs.html" %></li>
+              </ul>
+            </li>
+            <li>
+              <%= nav_link_to t("products.menu.granite"), "#granite",  "data-toggle" => "collapse", "data-parent" => "#menu" %>
+              <ul id="granite" class="sub-menu panel-collapse collapse">
+                <li><%= nav_link_to t("products.menu.imported_granite"), "/products/granites/imported.html" %></li>
+                <li><%= nav_link_to t("products.menu.imported_granite_slab"), "/products/granites/imported_slabs.html" %></li>
+                <li><%= nav_link_to t("products.menu.chinese_granite"), "/products/granites/chinese.html" %></li>
+                <li><%= nav_link_to t("products.menu.chinese_granite_slab"), "/products/granites/chinese_slabs.html" %></li>
+              </ul>
+            </li>
+            <li><%= nav_link_to t("products.menu.onyx"), "/products/onyxs.html" %></li>
+            <li><%= nav_link_to t("products.menu.water_jet"), "/products/water_jets.html" %></li>
+            <li><%= nav_link_to t("products.menu.mosaic"), "/products/mosaics.html" %></li>
+            <li><%= nav_link_to t("products.menu.thin_tile"), "/products/thin_tiles.html" %></li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
+    <%= partial "footer" %>
+
+    <script type="text/javascript">
+      $(function() {
+        $('ul.sub-menu li a.active').parent().parent().addClass('in');
+      });
+    </script>
+  </body>
+</html>

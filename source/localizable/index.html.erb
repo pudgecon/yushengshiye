@@ -1,0 +1,62 @@
+---
+title: 禹盛石业欢迎您
+---
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img alt="First slide" src="/images/products/img1.jpg" />
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img alt="Second slide" src="/images/products/img2.jpg" />
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img alt="Third slide" src="/images/products/img3.jpg" />
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="left my-carousel-control" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+  <a class="right my-carousel-control" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+<div class="row quick-link imgs">
+  <% link_to "/factory.html", class: "col-xs-4 col-md-4" do %>
+    <div class="relative">
+      <img src="/images/products/img11.jpg" />
+      <h5><%= t("index.factory") %><h5>
+    </div>
+  <% end %>
+  <% link_to "/machine.html", class: "col-xs-4 col-md-4" do %>
+    <div class="relative">
+      <img src="/images/products/img22.jpg" />
+      <h5><%= t("index.machine") %><h5>
+    </div>
+  <% end %>
+  <% link_to "/quarry.html", class: "col-xs-4 col-md-4" do %>
+    <div class="relative">
+      <img src="/images/products/img33.jpg" />
+      <h5><%= t("index.quarry") %><h5>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,53 @@
+---
+title: 进口大理石 - 产品展示 - 禹盛石业
+layout: 'products'
+---
+
+<div class="row">
+  <% [
+    " 1意大利木纹Serpeggiant",
+    " 2菲尼斯Rosalia Light",
+    " 3索菲特金Suofeit Gold",
+    " 4意大利银灰洞Italy Silver Travertine",
+    " 5香雪梅Lilac White",
+    " 6深啡网Emperador Dark",
+    " 7浅啡网Light Emperador",
+    " 8卡拉拉白Bianco Carrara",
+    " 9旧米黄Botticino Classico",
+    "10咖啡洞Coffee Travetine",
+    "11世纪米黄Century Beige",
+    "12西班牙米黄Crema Marfil",
+    "13诺娃米黄Crema nuova",
+    "14蒂诺米黄Dino Beige",
+    "15黄金洞Travertine Gold",
+    "16红洞Travertine Red",
+    "17土耳其米黄洞Turkey Travertine",
+    "18金碧辉煌Sunny Beige",
+    "19金线米黄Silvia marble",
+    "20土耳其玫瑰Turkey Rose",
+    "21西班牙珊瑚红Rojo Alicante",
+    "22紫罗兰Rosa Levanto",
+    "23埃及米黄Galala Beige",
+    "24印度绿Indian Green",
+    "25浅啡网Light Emperador",
+    "26越南水晶白Vietnam White",
+    "27奥特曼米黄Ultrman beige",
+    "28爵士白Volakas",
+    "29热带雨林啡Rainforest Brown",
+    "30热带雨林灰Rainforest Grey",
+    "31直纹白Marmara White"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-3 thumb">
+    <a href="#">
+      <img src="/images/products/marbles/imported/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <div class="title">
+        <p><%= m[1] %></p>
+        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      </div>
+    </a>
+  </div>
+
+  <% end %>
+</div>
