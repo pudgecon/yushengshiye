@@ -1,0 +1,23 @@
+<div class="header">
+  <div class="locales">
+    <span class="glyphicon glyphicon-globe"></span>
+    <% if I18n.locale == :en %>
+      <span>切换语言: <a href="<%= current_page.url[3..current_page.url.length] %>">简体中文</a></span>
+    <% else %>
+      <span>Change Region: <a href="/en<%= current_page.url %>">ENGLISH</a></span>
+    <% end %>
+  </div>
+  <% link_to "/", class: "brand" do %>
+    <h1><%= t(:brand) %></h1>
+  <% end %>
+  <div class="nav">
+    <ul>
+      <li><%= nav_link_to t("menu.home"), "/" %></li>
+      <li><%= nav_link_to t("menu.products"), "/products/marbles/imported.html" %></li>
+      <li><%= nav_link_to t("menu.projects"), "/projects.html" %></li>
+      <li><%= nav_link_to t("menu.factory_and_processing"), "/factory_and_processing/factory.html" %></li>
+      <li><%= nav_link_to t("menu.about_us"), "/about_us.html" %></li>
+      <li><%= nav_link_to t("menu.contact_us"), "/contact_us.html" %></li>
+    </ul>
+  </div>
+</div>

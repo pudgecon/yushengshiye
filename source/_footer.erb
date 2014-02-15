@@ -1,0 +1,49 @@
+<div class="container footer">
+  <div class="row categories">
+    <div class="col-xs-6 col-md-3">
+      <h5><%= t("menu.products") %></h5>
+      <ul>
+        <li><%= link_to t("products.menu.imported_marble"), "/products/marbles/imported.html" %></li>
+        <li><%= link_to t("products.menu.imported_marble_slab"), "/products/marbles/imported_slabs.html" %></li>
+        <li><%= link_to t("products.menu.chinese_marble"), "/products/marbles/chinese.html" %></li>
+        <li><%= link_to t("products.menu.chinese_marble_slab"), "/products/marbles/chinese_slabs.html" %></li>
+        <li><%= link_to t("products.menu.imported_granite"), "/products/granites/imported.html" %></li>
+        <li><%= link_to t("products.menu.imported_granite_slab"), "/products/granites/imported_slabs.html" %></li>
+        <li><%= link_to t("products.menu.chinese_granite"), "/products/granites/chinese.html" %></li>
+        <li><%= link_to t("products.menu.chinese_granite_slab"), "/products/granites/chinese_slabs.html" %></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <h5><%= t("menu.products") %></h5>
+      <ul>
+        <li><%= link_to t("products.menu.onyx"), "/products/onyxs.html" %></li>
+        <li><%= link_to t("products.menu.water_jet"), "/products/water_jets.html" %></li>
+        <li><%= link_to t("products.menu.mosaic"), "/products/mosaics.html" %></li>
+        <li><%= link_to t("products.menu.thin_tile"), "/products/thin_tiles.html" %></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <h5><%= link_to t("menu.projects"), "/projects.html" %></h5>
+      <h5><%= t("menu.factory_and_processing") %></h5>
+      <ul>
+        <li><a href="#"><%= link_to t("menu.factory"), "/factory_and_processing/factory.html" %></a></li>
+        <li><a href="#"><%= link_to t("menu.processing"), "/factory_and_processing/processing.html" %></a></li>
+      </ul>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <h5><%= link_to t("menu.about_us"), "/about_us.html" %></h5>
+      <h5><%= link_to t("menu.contact_us"), "/contact_us.html" %></h5>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div>&copy;2014 <%= t :brand %></div>
+    <div>
+      <a href="#"><%= t :terms_of_use %></a>
+      |
+      <a href="#"><%= t :privacy_policy %></a>
+      |
+      <a href="#"><%= t :disclaimer %></a>
+    </div>
+  </div>
+</div>
