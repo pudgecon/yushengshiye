@@ -16,19 +16,17 @@ layout: 'factory_and_processing'
     "工厂Factory (9)"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+    <% title = (I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1]) %>
+    <% title += " " + m[4].to_s %>
+    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
   <div class="col-md-10 col-md-offset-1 img detail">
     <div class="title">
-      <h4>
-        <% if I18n.locale == :en %>
-          <%= m[2].split(' ').map(&:capitalize).join(' ') %>
-        <% else %>
-          <%= m[1] %>
-        <% end %>
-        <%= m[4] %>
-      </h4>
+      <h4><%= title %></h4>
     </div>
-    <img src="/images/factory_and_processing/factory/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+    <a href="/images/factory_and_processing/factory/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+      <img src="/images/factory_and_processing/factory/<%= img_path %>" alt="<%= img_path %>" />
+    </a>
   </div>
 
   <% end %>

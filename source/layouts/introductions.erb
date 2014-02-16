@@ -9,7 +9,7 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || t(:welcome) %></title>
 
-    <%= stylesheet_link_tag "normalize", "bootstrap.min", "styles" %>
+    <%= stylesheet_link_tag "normalize", "bootstrap.min", "styles", "jquery.fancybox" %>
     <%= javascript_include_tag "all" %>
   </head>
 
@@ -32,5 +32,15 @@
     </div>
 
     <%= partial "footer" %>
+
+    <script type="text/javascript">
+      $(function() {
+        $(".fancybox").fancybox({
+          prevEffect: 'fade',
+          nextEffect: 'fade',
+          openEffect: 'fade'
+        });
+      });
+    </script>
   </body>
 </html>
