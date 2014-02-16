@@ -1,0 +1,24 @@
+---
+title: 矿山 - 禹盛石业
+layout: 'introductions'
+---
+
+<div class="row">
+  <% [
+    "矿山Quarry (1)",
+    "矿山Quarry (2)",
+    "矿山Quarry (3)",
+    "矿山Quarry (4)",
+    "矿山Quarry (5)"
+  ].each do |s| %>
+    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+  <div class="col-md-10 col-md-offset-1 img detail">
+    <div class="title">
+      <h4><%= m[1] %> <%= m[2].split(' ').map(&:capitalize).join(' ') %> <%= m[4] %></h4>
+    </div>
+    <img src="/images/introductions/quarry/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+  </div>
+
+  <% end %>
+</div>

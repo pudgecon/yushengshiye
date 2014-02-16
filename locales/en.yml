@@ -25,6 +25,11 @@ en:
     menu:
       factory: "factory"
       processing: "processing"
+  introductions:
+    menu:
+      factory: "factory"
+      machine: "machine"
+      quarry: "quarry"
   products:
     menu:
       marble: "marbles"

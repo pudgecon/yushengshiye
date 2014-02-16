@@ -25,6 +25,11 @@ zh-CN:
     menu:
       factory: "工厂"
       processing: "生产"
+  introductions:
+    menu:
+      factory: "工厂"
+      machine: "机器"
+      quarry: "矿山"
   products:
     menu:
       marble: "大理石系列"
