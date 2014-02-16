@@ -1,5 +1,5 @@
 ---
-title: 生产 - 产品展示 - 禹盛石业
+title: 生产 - 工厂与生产 - 禹盛石业
 layout: 'factory_and_processing'
 ---
 
@@ -31,7 +31,14 @@ layout: 'factory_and_processing'
 
   <div class="col-md-10 col-md-offset-1 img detail">
     <div class="title">
-      <h4><%= m[1] %> <%= m[2].split(' ').map(&:capitalize).join(' ') %> <%= m[4] %></h4>
+      <h4>
+        <% if I18n.locale == :en %>
+          <%= m[2].split(' ').map(&:capitalize).join(' ') %>
+        <% else %>
+          <%= m[1] %>
+        <% end %>
+        <%= m[4] %>
+      </h4>
     </div>
     <img src="/images/factory_and_processing/processing/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
   </div>
