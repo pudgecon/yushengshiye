@@ -18,13 +18,13 @@
       <%= partial "header" %>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-xs-3">
           <ul class="menu" id="menu">
             <li><%= nav_link_to t("factory_and_processing.menu.factory"), "/factory_and_processing/factory.html" %></li>
             <li><%= nav_link_to t("factory_and_processing.menu.processing"), "/factory_and_processing/processing.html" %></li>
           </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-xs-9">
           <%= yield %>
         </div>
       </div>

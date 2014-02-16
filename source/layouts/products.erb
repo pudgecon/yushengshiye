@@ -18,7 +18,7 @@
       <%= partial "header" %>
 
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3 col-xs-3">
           <ul class="menu" id="menu">
             <li>
               <%= nav_link_to t("products.menu.marble"), "#marble",  "data-toggle" => "collapse", "data-parent" => "#menu" %>
@@ -43,7 +43,7 @@
             <li><%= nav_link_to t("products.menu.thin_tile"), "/products/thin_tiles.html" %></li>
           </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 col-xs-9">
           <%= yield %>
         </div>
       </div>
