@@ -3,20 +3,160 @@ title: 进口花岗岩 - 产品展示 - 禹盛石业
 layout: 'products'
 ---
 
-<div class="row">
-  <% [
-  ].each do |s| %>
-    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+<% if I18n.locale == :en %>
+  <div class="row">
+    <% i = 0; [
+      "African Red",
+      "Balmoral Red",
+      "Baltic Brown",
+      "Baltic Brown (2)",
+      "Baltic Green",
+      "Bethel White",
+      "Black Galaxy",
+      "Black Galaxy (1)",
+      "Black Galaxy (2)",
+      "Blue Apparition",
+      "Blue Pearl",
+      "Blue Pearl (2)",
+      "Brown Imperial",
+      "Butterfly Green",
+      "Butterfly Yellow",
+      "Cafe Bahia",
+      "Cafe Imperial",
+      "Caledonia",
+      "Cambrian Black",
+      "Camelia White (1)",
+      "Camelia White (2)",
+      "Carmen Red",
+      "Carmen Red (2)",
+      "China Butterfly Green",
+      "Colombo Juparana",
+      "Dakota Mahogany",
+      "Desert Rose",
+      "Emerald Pearl",
+      "Emerald Pearl (2)",
+      "Giallo Antico",
+      "Giallo Antico (2)",
+      "Giallo California",
+      "Giallo Cecilia",
+      "Giallo Fiorito",
+      "Giallo SF Real",
+      "Giallo Santa Cecilia",
+      "Giallo Veneziano",
+      "Giallo Veneziano (2)",
+      "Green Sea",
+      "Himalaya Blue",
+      "Huang Jia Jing Ma",
+      "Imperial Red",
+      "Indian Blue",
+      "Kashmir White",
+      "Kashmire Golden",
+      "Kashmire White",
+      "Lavender Blue",
+      "Marrom Bahia",
+      "Multi Colour Red",
+      "NeroImpala",
+      "New Venetian Gold",
+      "Newlmperial Red",
+      "Ornamental",
+      "Paradiso Classico",
+      "Raw Silk",
+      "Rosa Notte",
+      "Royal Blue",
+      "Saint Louis",
+      "Salisbury Pink",
+      "Samoa",
+      "Saphire Blue",
+      "Saphire Brown",
+      "South African Red",
+      "Taj Red",
+      "Tan Brown",
+      "Tan Brown (2)",
+      "Tropical Brown",
+      "Ubatuba",
+      "Verde Butterfly",
+      "Verde Fontaine",
+      "Violetta Red",
+      "White Galaxy (1)",
+      "White Galaxy (2)",
+      "Ying Zhen Zhuo"
+    ].each do |s| %>
+      <% m = s.match /((\w+\s?)+)(\(\d\))?/ %>
 
-  <div class="col-md-3 thumb">
-    <a href="#">
-      <img src="/images/products/granites/imported/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
-      <div class="title">
-        <p><%= m[1] %></p>
-        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+      <% if i == 0 %>
+        <div class="row">
+      <% end %>
+
+      <div class="col-md-3 thumb">
+        <a href="#">
+          <img src="/images/products/granites/imported/<%= (m[1] + m[3].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[1].chomp(' ').gsub(' ', '_').downcase %>" />
+          <div class="title">
+            <p><%= m[1].split(' ').map(&:capitalize).join(' ') %></p>
+          </div>
+        </a>
       </div>
-    </a>
-  </div>
 
-  <% end %>
-</div>
+      <% if i == 3 %>
+        </div>
+        <% i = 0 %>
+      <% else %>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+    <% if 0 < i && i < 4 %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row">
+    <% i = 0; [
+      "世贸金麻Giallo SF Real",
+      "克什米尔白Kashmir White",
+      "南非红African Red",
+      "卡门红Carmen Red",
+      "印度红Imperial Red",
+      "印度绿Indian Blue",
+      "古典金麻Giallo Antico",
+      "啡钻Baltic Brown",
+      "大啡珠Brown Imperial",
+      "新金彩麻New Venetian Gold",
+      "紫点金麻Giallo Cecilia",
+      "细啡珠Cafe Bahia",
+      "绿星Emerald Pearl",
+      "绿钻Baltic Green",
+      "芬兰红Balmoral Red",
+      "英国棕Tan Brown",
+      "蓝珍珠Blue Pearl",
+      "蝴蝶黄Butterfly Yellow",
+      "金彩麻Giallo Veneziano",
+      "金钻麻Giallo Fiorito",
+      "黑金沙Black Galaxy (1)",
+      "黑金沙Black Galaxy (2)"
+    ].each do |s| %>
+      <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+
+      <% if i == 0 %>
+        <div class="row">
+      <% end %>
+
+      <div class="col-md-3 thumb">
+        <a href="#">
+          <img src="/images/products/granites/imported/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[1].chomp(' ').gsub(' ', '_').downcase %>" />
+          <div class="title">
+            <p><%= m[1] %></p>
+          </div>
+        </a>
+      </div>
+
+      <% if i == 3 %>
+        </div>
+        <% i = 0 %>
+      <% else %>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+    <% if 0 < i && i < 4 %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

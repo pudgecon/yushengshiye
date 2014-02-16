@@ -20,7 +20,6 @@
       <div class="row">
         <div class="col-md-3">
           <ul class="menu" id="menu">
-            <%#<li><a class="title" href="#">所有产品</a></li>%>
             <li>
               <%= nav_link_to t("products.menu.marble"), "#marble",  "data-toggle" => "collapse", "data-parent" => "#menu" %>
               <ul id="marble" class="sub-menu panel-collapse collapse">
@@ -36,7 +35,6 @@
                 <li><%= nav_link_to t("products.menu.imported_granite"), "/products/granites/imported.html" %></li>
                 <li><%= nav_link_to t("products.menu.imported_granite_slab"), "/products/granites/imported_slabs.html" %></li>
                 <li><%= nav_link_to t("products.menu.chinese_granite"), "/products/granites/chinese.html" %></li>
-                <li><%= nav_link_to t("products.menu.chinese_granite_slab"), "/products/granites/chinese_slabs.html" %></li>
               </ul>
             </li>
             <li><%= nav_link_to t("products.menu.onyx"), "/products/onyxs.html" %></li>

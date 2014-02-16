@@ -4,7 +4,7 @@ layout: 'products'
 ---
 
 <div class="row">
-  <% [
+  <% i = 0; [
     "黑白根Black Marquina less vein",
     "国产黑金花Chinese Black and Gold",
     "国产啡网Chinese Dark Emperador",
@@ -23,15 +23,31 @@ layout: 'products'
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
 
-  <div class="col-md-3 thumb">
-    <a href="#">
-      <img src="/images/products/marbles/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
-      <div class="title">
-        <p><%= m[1] %></p>
-        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
-      </div>
-    </a>
-  </div>
+    <% if i == 0 %>
+      <div class="row">
+    <% end %>
 
+    <div class="col-md-3 thumb">
+      <a href="#">
+        <img src="/images/products/marbles/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+        <div class="title">
+          <% if I18n.locale == :en %>
+            <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+          <% else %>
+            <p><%= m[1] %></p>
+          <% end %>
+        </div>
+      </a>
+    </div>
+
+    <% if i == 3 %>
+      </div>
+      <% i = 0 %>
+    <% else %>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+  <% if 0 < i && i < 4 %>
+    </div>
   <% end %>
 </div>

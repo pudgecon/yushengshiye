@@ -5,29 +5,78 @@ layout: 'products'
 
 <div class="row">
   <% [
-    "黑白根Black Marquina less vein",
-    "国产黑金花Chinese Black and Gold",
-    "国产啡网Chinese Dark Emperador",
-    "水晶白Crystal White",
-    "杜鹃红Cuckoo Red",
-    "欧网Euro Emperador",
-    "古木纹Forest black",
-    "灰木纹Grey Wood",
-    "广西百Guangxi White",
-    "杭灰Hang Grey",
-    "松香玉Honey Onyx",
-    "黑白根Nero Marquina more veins",
-    "金钱花Oscar Flower 1",
-    "皇室木纹Royal Wood",
-    "霸王花Bawang Flower"
+    "China Giallo Fiorito",
+    "China Tropic Brown",
+    "Chinese Butterfly Green",
+    "G300",
+    "G355",
+    "G361",
+    "G364",
+    "G367",
+    "G368",
+    "G381",
+    "G386-7",
+    "G386-8",
+    "G388",
+    "G399",
+    "G439",
+    "G562(Maple Leaves)",
+    "G603(Bianco Crystal)",
+    "G611(Almond Mauve)",
+    "G612(Padang Green)",
+    "G614",
+    "G617(Lilac Pink)",
+    "G623",
+    "G633(Sesame White)",
+    "G634(Misty Mauve)",
+    "G635(Pink Rose) 2",
+    "G635",
+    "G636(Almond Pink) 2",
+    "G648(Deer Brown) 2",
+    "G654(China Impala) 2",
+    "G655(Hazel White) 2",
+    "G657(Rose Luna) 2",
+    "G663(Sandal Fantasy) 2",
+    "G664(Misty Brown) 2",
+    "G682 2",
+    "G683(Guangze Red) 2",
+    "G684(Black Beauty) 2",
+    "G687 b",
+    "G687(Peach Blossom) 2",
+    "G696 2",
+    "G696(Frisk Red) 2",
+    "Leopard Skin(Dark) 2",
+    "Leopard Skin(Light) 2",
+    "Mum Yellow",
+    "Pearl White",
+    "Red Sanbao",
+    "Shandong Rust",
+    "Snow Plum NA",
+    "Tiger Skin Rust",
+    "White Grain HA",
+    "spray white",
+    "中国绿China Green JX",
+    "中国绿China Green SC",
+    "冰花兰Ice Blue",
+    "天山红Tianshan Red",
+    "山西黑Shanxi Black",
+    "惠东红Huidong Red",
+    "漳浦黑Zhangpu Black",
+    "蒙古黑Mangalia Black",
+    "虎皮白Tiger Skin White",
+    "虎皮红Tiger Skin Red",
+    "虎皮黄Tiger Skin Yellow",
+    "西丽红Xili Red (2)",
+    "西丽红Xili red",
+    "黑珍珠Black Pearl"
   ].each do |s| %>
-    <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+    <% m = s.match /([\u4e00-\u9fa5]*)\s?(([a-zA-Z0-9()\-]+\s?)+)(\(\d\))?/ %>
 
   <div class="col-md-3 thumb">
     <a href="#">
-      <img src="/images/products/marbles/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+      <img src="/images/products/granites/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
       <div class="title">
-        <p><%= m[1] %></p>
+        <p><%= I18n.locale == :en ? "" : m[1] %></p>
         <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
       </div>
     </a>

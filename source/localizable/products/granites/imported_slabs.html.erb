@@ -4,6 +4,7 @@ layout: 'products'
 ---
 
 <div class="row">
+  <% i = 0 %>
   <% [
     "黑金沙Black Galaxy",
     "七彩啡Labrador Antico",
@@ -45,15 +46,78 @@ layout: 'products'
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
 
-  <div class="col-md-3 thumb">
-    <a href="#">
-      <img src="/images/products/granites/imported_slabs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
-      <div class="title">
-        <p><%= m[1] %></p>
-        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
-      </div>
-    </a>
-  </div>
+    <% if i == 0 %>
+      <div class="row">
+    <% end %>
 
+    <div class="col-md-3 thumb">
+      <a href="#">
+        <img src="/images/products/granites/imported_slabs/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
+        <div class="title">
+          <% if I18n.locale == :en %>
+            <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+          <% else %>
+            <p><%= m[1] %></p>
+          <% end %>
+        </div>
+      </a>
+    </div>
+
+    <% if i == 3 %>
+      </div>
+      <% i = 0 %>
+    <% else %>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+
+  <% unless I18n.locale == :en %>
+    <% [
+      "奥文度金新矿",
+      "英国棕",
+      "印度白金",
+      "香槟金麻",
+      "希腊金麻",
+      "维拉黑",
+      "铁灰石",
+      "深紫点金麻",
+      "南非黑",
+      "玫瑰少女",
+      "蓝珍珠",
+      "金钻麻",
+      "加多利",
+      "黄玫瑰",
+      "幻彩红",
+      "红钻",
+      "海洋蓝",
+      "富贵棕",
+      "啡钻",
+      "帝王绿"
+    ].each do |s| %>
+      <% m = s.match /([\u4e00-\u9fa5]+)/ %>
+
+      <% if i == 0 %>
+        <div class="row">
+      <% end %>
+
+      <div class="col-md-3 thumb">
+        <a href="#">
+          <img src="/images/products/granites/imported_slabs/<%= m[1] + '.jpg' %>" alt="<%= m[1] %>" />
+          <div class="title">
+            <p><%= m[1] %></p>
+          </div>
+        </a>
+      </div>
+
+      <% if i == 3 %>
+        </div>
+        <% i = 0 %>
+      <% else %>
+        <% i += 1 %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <% if 0 < i && i < 4 %>
+    </div>
   <% end %>
 </div>
