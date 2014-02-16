@@ -82,17 +82,17 @@ layout: 'products'
       "Ying Zhen Zhuo"
     ].each do |s| %>
       <% m = s.match /((\w+\s?)+)(\(\d\))?/ %>
+      <% title = m[1].split(' ').map(&:capitalize).join(' ') %>
+      <% img_path = (m[1] + m[3].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
       <% if i == 0 %>
         <div class="row">
       <% end %>
 
       <div class="col-md-3 thumb">
-        <a href="#">
-          <img src="/images/products/granites/imported/<%= (m[1] + m[3].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[1].chomp(' ').gsub(' ', '_').downcase %>" />
-          <div class="title">
-            <p><%= m[1].split(' ').map(&:capitalize).join(' ') %></p>
-          </div>
+        <a href="/images/products/granites/imported/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+          <img src="/images/products/granites/imported/thumbnails/<%= img_path %>" alt="<%= title %>" />
+          <div class="title"><%= title %></div>
         </a>
       </div>
 
@@ -134,17 +134,17 @@ layout: 'products'
       "黑金沙Black Galaxy (2)"
     ].each do |s| %>
       <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+    <% title = m[1] %>
+    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
       <% if i == 0 %>
         <div class="row">
       <% end %>
 
       <div class="col-md-3 thumb">
-        <a href="#">
-          <img src="/images/products/granites/imported/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[1].chomp(' ').gsub(' ', '_').downcase %>" />
-          <div class="title">
-            <p><%= m[1] %></p>
-          </div>
+        <a href="/images/products/granites/imported/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+          <img src="/images/products/granites/imported/thumbnails/<%= img_path %>" alt="<%= title %>" />
+          <div class="title"><%= title %></div>
         </a>
       </div>
 

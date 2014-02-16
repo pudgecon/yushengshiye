@@ -4,7 +4,7 @@ layout: 'products'
 ---
 
 <div class="row">
-  <% [
+  <% i = 0; [
     "China Giallo Fiorito",
     "China Tropic Brown",
     "Chinese Butterfly Green",
@@ -71,16 +71,32 @@ layout: 'products'
     "黑珍珠Black Pearl"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]*)\s?(([a-zA-Z0-9()\-]+\s?)+)(\(\d\))?/ %>
+    <% title1 = I18n.locale == :en ? "" : m[1] %>
+    <% title2 = m[2].split(' ').map(&:capitalize).join(' ') %>
+    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
-  <div class="col-md-3 thumb">
-    <a href="#">
-      <img src="/images/products/granites/chinese/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
-      <div class="title">
-        <p><%= I18n.locale == :en ? "" : m[1] %></p>
-        <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
+    <% if i == 0 %>
+      <div class="row">
+    <% end %>
+
+    <div class="col-md-3 thumb">
+      <a href="/images/products/granites/chinese/<%= img_path %>" title="<%= title1 + " " + title2 %>" class="fancybox" rel="group">
+        <img src="/images/products/granites/chinese/thumbnails/<%= img_path %>" alt="<%= title1 + " " + title2 %>" />
+        <div class="title">
+          <p><%= title1 %></p>
+          <p><%= title2 %></p>
+        </div>
+      </a>
+    </div>
+
+    <% if i == 3 %>
       </div>
-    </a>
-  </div>
-
+      <% i = 0 %>
+    <% else %>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+  <% if 0 < i && i < 4 %>
+    </div>
   <% end %>
 </div>

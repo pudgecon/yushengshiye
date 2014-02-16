@@ -18,21 +18,17 @@ layout: 'products'
     "白木纹大理石 White Wood Marble (2)"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+    <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
+    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
     <% if i == 0 %>
       <div class="row">
     <% end %>
 
     <div class="col-md-3 thumb">
-      <a href="#">
-        <img src="/images/products/thin_tiles/<%= (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>" alt="<%= m[2].chomp(' ').gsub(' ', '_').downcase %>" />
-        <div class="title">
-          <% if I18n.locale == :en %>
-            <p><%= m[2].split(' ').map(&:capitalize).join(' ') %></p>
-          <% else %>
-            <p><%= m[1] %></p>
-          <% end %>
-        </div>
+      <a href="/images/products/thin_tiles/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+        <img src="/images/products/thin_tiles/thumbnails/<%= img_path %>" alt="<%= title %>" />
+        <div class="title"><%= title %></div>
       </a>
     </div>
 
