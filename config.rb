@@ -35,9 +35,8 @@ helpers do
   def link_to(*args, &block)
     url_arg_index = block_given? ? 0 : 1
     if url = args[url_arg_index]
-      #new_url = "/#{I18n.locale}#{url}"
-      #new_url = "/en#{url}" if I18n.locale == :en
-      new_url = I18n.locale == :en ? "/en#{url}" : url
+      url.start_with?("#") ? (new_url = url) :
+        (new_url = I18n.locale == :en ? "/en#{url}" : url)
       args[url_arg_index] = new_url
     end
 
