@@ -28,6 +28,27 @@ ul {
   padding-right: 30px;
 }
 
+.carousel-indicators li {
+  background-color: #FFFFFF;
+  /* other browsers */
+  /* opacity: 0.4; */
+  /* this works in IE6, IE7, and IE8 */
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40); 
+  /* this works in IE8 only */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=40)";
+  background-color: rgba(0,0,0,0);
+  
+  &.active {
+    /* other browsers */
+    /* opacity: 0.1; */
+    /* this works in IE6, IE7, and IE8 */
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100); 
+    /* this works in IE8 only */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=100)";
+    background-color: #FFFFFF;
+  }
+}
+
 .my-carousel-control {
   position: absolute;
   top: 50%;
@@ -42,14 +63,14 @@ ul {
   &:hover {
     color: white;
     text-decoration: none;
-    background: rgba(255, 255, 255, 0.2);
     background-color: #FFFFFF;
     /* other browsers */
-    opacity: 0.2;
+    /* opacity: 0.2; */
     /* this works in IE6, IE7, and IE8 */
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20); 
     /* this works in IE8 only */
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=20)";
+    background: rgba(255, 255, 255, 0.2);
   }
   &.left {
     left: 0;
@@ -79,14 +100,14 @@ ul {
       width: 100%;
       display: block;
       color: white;
-      background: rgba(85, 85, 85, 0.5);
       background-color: #555555;
       /* other browsers */
-      opacity: 0.2;
+      /* opacity: 0.5; */
       /* this works in IE6, IE7, and IE8 */
-      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20); 
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); 
       /* this works in IE8 only */
-      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=20)";
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=50)";
+      background: rgba(85, 85, 85, 0.5);
       line-height: 300%;
       margin: 0;
       border-bottom: 3px solid white;
