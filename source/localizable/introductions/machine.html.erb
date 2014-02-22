@@ -3,8 +3,11 @@ title: 机器 - 禹盛石业
 layout: 'introductions'
 ---
 
+<div class="title">
+  <h4><%= t("introductions.menu.machine") %></h4>
+</div>
 <div class="row">
-  <% [
+  <% i = 0; [
     "机器Machine (1)",
     "机器Machine (2)",
     "机器Machine (3)",
@@ -15,17 +18,26 @@ layout: 'introductions'
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = (I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1]) %>
-    <% title += " " + m[4].to_s %>
     <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
-  <div class="col-md-10 col-md-offset-1 img detail">
-    <div class="title">
-      <h4><%= title %></h4>
-    </div>
-    <a href="/images/introductions/machine/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-      <img src="/images/introductions/machine/<%= img_path %>" alt="<%= img_path %>" />
-    </a>
-  </div>
+    <% if i == 0 %>
+      <div class="row">
+    <% end %>
 
+    <div class="col-md-3 col-xs-3 thumb">
+      <a href="/images/introductions/machine/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+        <img src="/images/introductions/machine/thumbnails/<%= img_path %>" alt="<%= img_path %>" />
+      </a>
+    </div>
+
+    <% if i == 3 %>
+      </div>
+      <% i = 0 %>
+    <% else %>
+      <% i += 1 %>
+    <% end %>
+  <% end %>
+  <% if 0 < i && i < 4 %>
+    </div>
   <% end %>
 </div>

@@ -175,6 +175,7 @@ body > .footer {
       padding: 0;
       li {
         list-style-type: none;
+        text-transform: capitalize;
       }
     }
     a {
@@ -242,6 +243,9 @@ ul.menu {
   .title {
     height: 70px;
     padding: 5px 0;
+    text-align: center;
+    font-size: 12px;
+    text-transform: capitalize;
     p { margin-bottom: 0; }
   }
 }
@@ -262,6 +266,9 @@ ul.menu {
     display: inline-block;
     margin-right: 10px;
   }
+  &.group {
+    color: #8ec640;
+  }
 }
 
 .img.detail {
@@ -274,4 +281,8 @@ ul.menu {
 
 h3.contact-us {
   color: #8ec640;
+}
+
+.row.margin-bottom {
+  margin-bottom: 40px;
 }

@@ -3,44 +3,46 @@ title: 生产 - 工厂与生产 - 禹盛石业
 layout: 'factory_and_processing'
 ---
 
-<div class="row">
+<div class="row margin-bottom">
   <% [
-    "荒料储存The Storage of Blocks (1)",
+    "1荒料储存The Storage of Blocks (1)",
     "荒料储存The Storage of Blocks (2)",
     "荒料储存The Storage of Blocks (3)",
-    "荒料切割Blocks cutting (1)",
+    "2荒料切割Blocks cutting (1)",
     "荒料切割Blocks cutting (2)",
     "荒料切割Blocks cutting (3)",
-    "Make protection of the side",
-    "大板晾干与背网Dry the slab and back netting (1)",
+    "3石材防护Make protection of the side",
+    "4大板晾干与背网Dry the slab and back netting (1)",
     "大板晾干与背网Dry the slab and back netting (2)",
     "大板晾干与背网Dry the slab and back netting (3)",
     "大板晾干与背网Dry the slab and back netting (4)",
-    "刷胶gluing (1)",
+    "5刷胶gluing (1)",
     "刷胶gluing (2)",
-    "磨光Polishing (1)",
+    "6磨光Polishing (1)",
     "磨光Polishing (2)",
     "磨光Polishing (3)",
-    "工程板切割与排版cut to size and typest (1)",
+    "7工程板切割与排版cut to size and typest (1)",
     "工程板切割与排版cut to size and typest (2)",
     "工程板切割与排版cut to size and typest (3)",
     "工程板切割与排版cut to size and typest (4)",
     "工程板切割与排版cut to size and typest (5)"
   ].each do |s| %>
-    <% m = s.match /([\u4e00-\u9fa5]*)\s?((\w+\s?)+)(\(\d\))?/ %>
-    <% title = (I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1]) %>
-    <% title += " " + m[4].to_s %>
+    <% m = s.match /(\d?)([\u4e00-\u9fa5]*)\s?((\w+\s?)+)(\(\d\))?/ %>
+    <% title = (I18n.locale == :en ? m[3].split(' ').map(&:capitalize).join(' ') : m[2]) %>
+    <% img_path = (m[3] + m[5].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
-    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
+    <% if m[1].to_i > 0 %>
+      <% if m[1].to_i > 1 %>
+        </div>
+        <div class="row margin-bottom">
+      <% end %>
+      <div class="title group"><h4><%= title %></h4></div>
+    <% end %>
 
-  <div class="col-md-10 col-md-offset-1 img detail">
-    <div class="title">
-      <h4><%= title %></h4>
+    <div class="col-md-3 col-xs-3 thumb">
+      <a href="/images/factory_and_processing/processing/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+        <img src="/images/factory_and_processing/processing/thumbnails/<%= img_path %>" alt="<%= img_path %>" />
+      </a>
     </div>
-    <a href="/images/factory_and_processing/processing/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-      <img src="/images/factory_and_processing/processing/<%= img_path %>" alt="<%= img_path %>" />
-    </a>
-  </div>
-
   <% end %>
 </div>

@@ -9,39 +9,45 @@ title: 工程案例 - 禹盛石业
     </ul>
   </div>
   <div class="col-md-9 col-xs-9">
-    <% [
-      "案例project",
-      "土耳其洞石工程Turkey Travertine Project (1)",
+    <% i = 0; [
+      "1案例project",
+      "2白玉兰工程White Pearl Project",
+      "3土耳其洞石工程Turkey Travertine Project (1)",
       "土耳其洞石工程Turkey Travertine Project (2)",
-      "德国米黄工程German Beige Project (1)",
+      "4德国米黄工程German Beige Project (1)",
       "德国米黄工程German Beige Project (2)",
-      "意大利木纹工程Italy Serpenggiante Project (1)",
+      "5意大利木纹工程Italy Serpenggiante Project (1)",
       "意大利木纹工程Italy Serpenggiante Project (2)",
       "意大利木纹工程Italy Serpenggiante Project (3)",
       "意大利木纹工程Italy Serpenggiante Project (4)",
-      "斯拉夫白工程Sivec White Project (1)",
+      "6斯拉夫白工程Sivec White Project (1)",
       "斯拉夫白工程Sivec White Project (2)",
       "斯拉夫白工程Sivec White Project (3)",
+      "斯拉夫白工程Sivec White Project (7)",
       "斯拉夫白工程Sivec White Project (4)",
       "斯拉夫白工程Sivec White Project (5)",
-      "斯拉夫白工程Sivec White Project (6)",
-      "斯拉夫白工程Sivec White Project (7)",
-      "白玉兰工程White Pearl Project"
+      "斯拉夫白工程Sivec White Project (6)"
     ].each do |s| %>
-      <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
-      <% title = (I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1]) %>
-      <% title += " " + m[4].to_s %>
-      <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
+      <% m = s.match /(\d?)([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
+      <% title = (I18n.locale == :en ? m[3].split(' ').map(&:capitalize).join(' ') : m[2]) %>
+      <% img_path = (m[3] + m[5].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
-    <div class="col-md-10 col-md-offset-1 img detail">
-      <div class="title">
-        <h4><%= title %></h4>
+      <% if m[1].to_i > 0 %>
+        <% if m[1].to_i > 1 %>
+          </div>
+        <% end %>
+        <div class="row margin-bottom">
+        <div class="title group"><h4><%= title %></h4></div>
+      <% end %>
+
+
+      <div class="col-md-3 col-xs-3 thumb">
+        <a href="/images/projects/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+          <img src="/images/projects/thumbnails/<%= img_path %>" alt="<%= img_path %>" />
+        </a>
       </div>
-      <a href="/images/projects/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-        <img src="/images/projects/<%= img_path %>" alt="<%= img_path %>" />
-      </a>
-    </div>
 
     <% end %>
+    </div>
   </div>
 </div>
