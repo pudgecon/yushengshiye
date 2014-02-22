@@ -6,16 +6,16 @@ layout: 'products'
 <div class="row">
   <% i = 0 %>
   <% [
+    "灰木纹大理石 Grey Wood Marble",
+    "白木纹大理石 White Wood Marble (1)",
+    "白木纹大理石 White Wood Marble (2)",
     "工厂 Factory (1)",
     "工厂 Factory (2)",
     "工厂 Factory (3)",
     "工厂 Factory (4)",
     "工厂 Factory (4)",
     "工厂 Factory (6)",
-    "工厂 Factory (7)",
-    "灰木纹大理石 Grey Wood Marble",
-    "白木纹大理石 White Wood Marble (1)",
-    "白木纹大理石 White Wood Marble (2)"
+    "工厂 Factory (7)"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
