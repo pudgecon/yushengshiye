@@ -6,18 +6,18 @@ layout: 'products'
 <div class="row">
   <% i = 0 %>
   <% [
-    "黑金沙Black Galaxy",
-    "七彩啡Labrador Antico",
-    "比萨金麻Golden Persa",
-    "奥文镀金Giallo Oranmental",
-    "克什米尔金Kashmir Gold",
-    "幻彩紫Parodiso",
-    "河流白River White",
-    "娱乐金麻Giallo Cecilia",
-    "帝王金Golden King",
-    "爱迪达Saphire Brown",
-    "安哥拉棕Antique Brown",
-    "加洲金麻Juparana California"
+    "巴西金Giallo Brazil",
+    "凤尾银麻Aran White",
+    "古典木纹啡Juparana Classico",
+    "加里奥金Carioco Gold",
+    "金钻花麻Diamond Giallo",
+    "蓝眼睛Blue Eyes",
+    "圣地亚哥红Santiago Red",
+    "莎利士红Sallisbury Pink",
+    "热带绿Tropical Green",
+    "木头黄金Wooden Gold",
+    "幻彩红Multicolor Red",
+    "幻彩绿Paradiso Green"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
@@ -75,7 +75,7 @@ layout: 'products'
 
 <div class="row">
   <ul class="page">
-    <% current = 1 %>
+    <% current = 2 %>
     <% total = I18n.locale == :en ? 4 : 5 %>
     <% path = "/products/granites/imported_slabs" %>
 

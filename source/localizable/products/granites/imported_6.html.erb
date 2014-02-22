@@ -6,18 +6,18 @@ layout: 'products'
 <% if I18n.locale == :en %>
   <div class="row">
     <% i = 0; [
-      "African Red",
-      "Balmoral Red",
-      "Baltic Brown",
-      "Baltic Brown (2)",
-      "Baltic Green",
-      "Black Galaxy (1)",
-      "Black Galaxy (2)",
-      "Blue Apparition",
-      "Blue Pearl",
-      "Blue Pearl (2)",
-      "Black Galaxy",
-      "Bethel White"
+      "Saphire Blue",
+      "Saphire Brown",
+      "South African Red",
+      "Taj Red",
+      "Tan Brown",
+      "Tan Brown (2)",
+      "Tropical Brown",
+      "Ubatuba",
+      "Verde Butterfly",
+      "Verde Fontaine",
+      "Violetta Red",
+      "White Galaxy (1)"
     ].each do |s| %>
       <% m = s.match /((\w+\s?)+)(\(\d\))?/ %>
       <% title = m[1].split(' ').map(&:capitalize).join(' ') %>
@@ -48,7 +48,7 @@ layout: 'products'
 
   <div class="row">
     <ul class="page">
-      <% current = 1 %>
+      <% current = 6 %>
       <% total = 7 %>
       <% path = "/products/granites/imported" %>
 
@@ -84,18 +84,6 @@ layout: 'products'
 <% else %>
   <div class="row">
     <% i = 0; [
-      "世贸金麻Giallo SF Real",
-      "克什米尔白Kashmir White",
-      "南非红African Red",
-      "卡门红Carmen Red",
-      "印度红Imperial Red",
-      "印度绿Indian Blue",
-      "古典金麻Giallo Antico",
-      "啡钻Baltic Brown",
-      "大啡珠Brown Imperial",
-      "新金彩麻New Venetian Gold",
-      "紫点金麻Giallo Cecilia",
-      "细啡珠Cafe Bahia"
     ].each do |s| %>
       <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = m[1] %>
@@ -126,8 +114,8 @@ layout: 'products'
 
   <div class="row">
     <ul class="page">
-      <% current = 1 %>
-      <% total = 2 %>
+      <% current = 0 %>
+      <% total = 0 %>
       <% path = "/products/granites/imported" %>
 
       <% if current > 1 %>

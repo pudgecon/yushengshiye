@@ -10,36 +10,13 @@ layout: 'products'
     "爵士白Vilakos White random vein",
     "蒂诺米黄Dino Beige Slope Vein",
     "蒂诺米黄Dino Beige Straight Vein",
-    "诺娃米黄Crema nuova",
     "奥特曼米黄Ultaman Beige (1)",
     "奥特曼米黄Ultaman Beige (2)",
+    "诺娃米黄Crema nuova",
     "水晶浅啡Crytal Light Emperador (1)",
     "水晶浅啡Crytal Light Emperador (2)",
     "西班牙深啡网Spanish Dark Emperador (1)",
-    "西班牙深啡网Spanish Dark Emperador (2)",
-    "木化石Moca Cream (1)",
-    "木化石Moca Cream (2)",
-    "旧米黄Bottoccino Classic (1)",
-    "旧米黄Bottoccino Classic (2)",
-    "旧米黄Bottoccino Classic (3)",
-    "热带雨林棕Rainforest Brown (1)",
-    "热带雨林棕Rainforest Brown (2)",
-    "金蜘蛛Golder Spider",
-    "热带雨林绿Rainforst Green",
-    "卡布奇诺米黄Cappuccino",
-    "阿曼米黄Classic Beige",
-    "意大利凯越红Italy Kaiyue Red",
-    "埃及米黄Egypt Beige",
-    "珊瑚红Spanish Roja Alicante (1)",
-    "珊瑚红Spanish Roja Alicante (2)",
-    "金碧辉煌Sunny Beige",
-    "直纹白Marmara White",
-    "卡拉拉白Carara White",
-    "白玉兰White Peral",
-    "雪花白Statuario",
-    "橙皮红Diana Rose",
-    "西班牙米黄Cream Marfil",
-    "白玫瑰Rose White"
+    "西班牙深啡网Spanish Dark Emperador (2)"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
@@ -66,4 +43,40 @@ layout: 'products'
   <% if 0 < i && i < 4 %>
     </div>
   <% end %>
+</div>
+
+<div class="row">
+  <ul class="page">
+    <% current = 1 %>
+    <% total = 3 %>
+    <% path = "/products/marbles/imported_slabs" %>
+
+    <% if current > 1 %>
+      <li class="page-item">
+        <%= link_to "« #{t('page.first')}", "#{path}.html" %>
+      </li>
+      <li class="page-item">
+        <%= link_to "‹ #{t('page.previous')}", "#{path}#{current > 2 ? "_#{current - 1}" : ""}.html" %>
+      </li>
+    <% end %>
+
+    <% (1..total).each do |i| %>
+      <% if current == i %>
+        <li class="page-current"><%= i %></li>
+      <% else %>
+        <li class="page-item">
+          <%= link_to "#{i}", "#{path}#{i > 1 ? "_#{i}" : ""}.html" %>
+        </li>
+      <% end %>
+    <% end %>
+
+    <% if current < total %>
+      <li class="page-item">
+        <%= link_to "#{t('page.next')} ›", "#{path}_#{current + 1}.html" %>
+      </li>
+      <li class="page-item">
+        <%= link_to "#{t('page.last')} »", "#{path}_#{total}.html" %>
+      </li>
+    <% end %>
+  </ul>
 </div>

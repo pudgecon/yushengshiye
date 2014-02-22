@@ -1,26 +1,27 @@
 ---
-title: 进口花岗岩 - 产品展示 - 禹盛石业
+title: 国产花岗岩 - 产品展示 - 禹盛石业
 layout: 'products'
 ---
 
 <% if I18n.locale == :en %>
   <div class="row">
     <% i = 0; [
-      "African Red",
-      "Balmoral Red",
-      "Baltic Brown",
-      "Baltic Brown (2)",
-      "Baltic Green",
-      "Black Galaxy (1)",
-      "Black Galaxy (2)",
-      "Blue Apparition",
-      "Blue Pearl",
-      "Blue Pearl (2)",
-      "Black Galaxy",
-      "Bethel White"
+      "G696(Frisk Red) 2",
+      "China Giallo Fiorito",
+      "China Tropic Brown",
+      "Chinese Butterfly Green",
+      "Leopard Skin(Dark) 2",
+      "Leopard Skin(Light) 2",
+      "Mum Yellow",
+      "Pearl White",
+      "Red Sanbao",
+      "Shandong Rust",
+      "Snow Plum NA",
+      "Tiger Skin Rust"
     ].each do |s| %>
-      <% m = s.match /((\w+\s?)+)(\(\d\))?/ %>
+      <% m = s.match /(([a-zA-Z0-9()\-]+\s?)+)(\(\d\))?/ %>
       <% title = m[1].split(' ').map(&:capitalize).join(' ') %>
+      <% title = title.match(/^G\d{3}/) ? title[0..3] : title %>
       <% img_path = (m[1] + m[3].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
       <% if i == 0 %>
@@ -28,9 +29,11 @@ layout: 'products'
       <% end %>
 
       <div class="col-md-3 col-xs-3 thumb">
-        <a href="/images/products/granites/imported/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-          <img src="/images/products/granites/imported/thumbnails/<%= img_path %>" alt="<%= title %>" />
-          <div class="title"><%= title %></div>
+        <a href="/images/products/granites/chinese/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+          <img src="/images/products/granites/chinese/thumbnails/<%= img_path %>" alt="<%= title %>" />
+          <div class="title">
+            <p><%= title %></p>
+          </div>
         </a>
       </div>
 
@@ -48,9 +51,9 @@ layout: 'products'
 
   <div class="row">
     <ul class="page">
-      <% current = 1 %>
-      <% total = 7 %>
-      <% path = "/products/granites/imported" %>
+      <% current = 4 %>
+      <% total = 5 %>
+      <% path = "/products/granites/chinese" %>
 
       <% if current > 1 %>
         <li class="page-item">
@@ -84,31 +87,21 @@ layout: 'products'
 <% else %>
   <div class="row">
     <% i = 0; [
-      "世贸金麻Giallo SF Real",
-      "克什米尔白Kashmir White",
-      "南非红African Red",
-      "卡门红Carmen Red",
-      "印度红Imperial Red",
-      "印度绿Indian Blue",
-      "古典金麻Giallo Antico",
-      "啡钻Baltic Brown",
-      "大啡珠Brown Imperial",
-      "新金彩麻New Venetian Gold",
-      "紫点金麻Giallo Cecilia",
-      "细啡珠Cafe Bahia"
     ].each do |s| %>
-      <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
-    <% title = m[1] %>
-    <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
+      <% m = s.match /([\u4e00-\u9fa5]*)\s?(([a-zA-Z0-9()\-]+\s?)+)(\(\d\))?/ %>
+      <% title = m[1] %>
+      <% img_path = (m[2] + m[4].to_s).chomp(' ').gsub(' ', '_').downcase + '.jpg' %>
 
       <% if i == 0 %>
         <div class="row">
       <% end %>
 
       <div class="col-md-3 col-xs-3 thumb">
-        <a href="/images/products/granites/imported/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-          <img src="/images/products/granites/imported/thumbnails/<%= img_path %>" alt="<%= title %>" />
-          <div class="title"><%= title %></div>
+        <a href="/images/products/granites/chinese/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+          <img src="/images/products/granites/chinese/thumbnails/<%= img_path %>" alt="<%= title %>" />
+          <div class="title">
+            <p><%= title %></p>
+          </div>
         </a>
       </div>
 
@@ -126,9 +119,9 @@ layout: 'products'
 
   <div class="row">
     <ul class="page">
-      <% current = 1 %>
-      <% total = 2 %>
-      <% path = "/products/granites/imported" %>
+      <% current = 0 %>
+      <% total = 0 %>
+      <% path = "/products/granites/chinese" %>
 
       <% if current > 1 %>
         <li class="page-item">

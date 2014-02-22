@@ -5,18 +5,9 @@ layout: 'products'
 
 <div class="row">
   <% i = 0; [
-    "黑白根Black Marquina less vein",
-    "国产黑金花Chinese Black and Gold",
-    "国产啡网Chinese Dark Emperador",
-    "水晶白Crystal White",
-    "杜鹃红Cuckoo Red",
-    "灰木纹Grey Wood",
-    "广西百Guangxi White",
-    "杭灰Hang Grey",
-    "松香玉Honey Onyx",
-    "黑白根Nero Marquina more veins",
-    "金钱花Oscar Flower 1",
-    "霸王花Bawang Flower"
+    "皇室木纹Royal Wood",
+    "欧网Euro Emperador",
+    "古木纹Forest black"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
@@ -47,7 +38,7 @@ layout: 'products'
 
 <div class="row">
   <ul class="page">
-    <% current = 1 %>
+    <% current = 2 %>
     <% total = 2 %>
     <% path = "/products/marbles/chinese" %>
 

@@ -1,22 +1,17 @@
 ---
-title: 国产大理石 - 产品展示 - 禹盛石业
+title: 进口大理石 - 产品展示 - 禹盛石业
 layout: 'products'
 ---
 
 <div class="row">
   <% i = 0; [
-    "黑白根Black Marquina less vein",
-    "国产黑金花Chinese Black and Gold",
-    "国产啡网Chinese Dark Emperador",
-    "水晶白Crystal White",
-    "杜鹃红Cuckoo Red",
-    "灰木纹Grey Wood",
-    "广西百Guangxi White",
-    "杭灰Hang Grey",
-    "松香玉Honey Onyx",
-    "黑白根Nero Marquina more veins",
-    "金钱花Oscar Flower 1",
-    "霸王花Bawang Flower"
+    "13诺娃米黄Crema nuova",
+    "19金线米黄Silvia marble",
+    "25浅啡网Light Emperador",
+    "27奥特曼米黄Ultrman beige",
+    "28爵士白Volakas",
+    "29热带雨林啡Rainforest Brown",
+    "30热带雨林灰Rainforest Grey"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
@@ -27,8 +22,8 @@ layout: 'products'
     <% end %>
 
     <div class="col-md-3 col-xs-3 thumb">
-      <a href="/images/products/marbles/chinese/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
-        <img src="/images/products/marbles/chinese/thumbnails/<%= img_path %>" alt="<%= title %>" />
+      <a href="/images/products/marbles/imported/<%= img_path %>" title="<%= title %>" class="fancybox" rel="group">
+        <img src="/images/products/marbles/imported/thumbnails/<%= img_path %>" alt="<%= title %>" />
         <div class="title"><%= title %></div>
       </a>
     </div>
@@ -47,9 +42,9 @@ layout: 'products'
 
 <div class="row">
   <ul class="page">
-    <% current = 1 %>
-    <% total = 2 %>
-    <% path = "/products/marbles/chinese" %>
+    <% current = 3 %>
+    <% total = 3 %>
+    <% path = "/products/marbles/imported" %>
 
     <% if current > 1 %>
       <li class="page-item">

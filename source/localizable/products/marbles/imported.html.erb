@@ -12,30 +12,11 @@ layout: 'products'
     " 5香雪梅Lilac White",
     " 6深啡网Emperador Dark",
     " 7浅啡网Light Emperador",
+    "10咖啡洞Coffee Travetine",
     " 8卡拉拉白Bianco Carrara",
     " 9旧米黄Botticino Classico",
-    "10咖啡洞Coffee Travetine",
     "11世纪米黄Century Beige",
-    "12西班牙米黄Crema Marfil",
-    "13诺娃米黄Crema nuova",
-    "14蒂诺米黄Dino Beige",
-    "15黄金洞Travertine Gold",
-    "16红洞Travertine Red",
-    "17土耳其米黄洞Turkey Travertine",
-    "18金碧辉煌Sunny Beige",
-    "19金线米黄Silvia marble",
-    "20土耳其玫瑰Turkey Rose",
-    "21西班牙珊瑚红Rojo Alicante",
-    "22紫罗兰Rosa Levanto",
-    "23埃及米黄Galala Beige",
-    "24印度绿Indian Green",
-    "25浅啡网Light Emperador",
-    "26越南水晶白Vietnam White",
-    "27奥特曼米黄Ultrman beige",
-    "28爵士白Volakas",
-    "29热带雨林啡Rainforest Brown",
-    "30热带雨林灰Rainforest Grey",
-    "31直纹白Marmara White"
+    "12西班牙米黄Crema Marfil"
   ].each do |s| %>
     <% m = s.match /([\u4e00-\u9fa5]+)\s?((\w+\s?)+)(\(\d\))?/ %>
     <% title = I18n.locale == :en ? m[2].split(' ').map(&:capitalize).join(' ') : m[1] %>
@@ -62,4 +43,40 @@ layout: 'products'
   <% if 0 < i && i < 4 %>
     </div>
   <% end %>
+</div>
+
+<div class="row">
+  <ul class="page">
+    <% current = 1 %>
+    <% total = 3 %>
+    <% path = "/products/marbles/imported" %>
+
+    <% if current > 1 %>
+      <li class="page-item">
+        <%= link_to "« #{t('page.first')}", "#{path}.html" %>
+      </li>
+      <li class="page-item">
+        <%= link_to "‹ #{t('page.previous')}", "#{path}#{current > 2 ? "_#{current - 1}" : ""}.html" %>
+      </li>
+    <% end %>
+
+    <% (1..total).each do |i| %>
+      <% if current == i %>
+        <li class="page-current"><%= i %></li>
+      <% else %>
+        <li class="page-item">
+          <%= link_to "#{i}", "#{path}#{i > 1 ? "_#{i}" : ""}.html" %>
+        </li>
+      <% end %>
+    <% end %>
+
+    <% if current < total %>
+      <li class="page-item">
+        <%= link_to "#{t('page.next')} ›", "#{path}_#{current + 1}.html" %>
+      </li>
+      <li class="page-item">
+        <%= link_to "#{t('page.last')} »", "#{path}_#{total}.html" %>
+      </li>
+    <% end %>
+  </ul>
 </div>
