@@ -286,3 +286,36 @@ h3.contact-us {
 .row.margin-bottom {
   margin-bottom: 40px;
 }
+
+ul.page {
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 0;
+    font-size: 14px;
+    line-height: 100%;
+    &.page-current {
+      font-weight: normal;
+      font-size: 14px;
+      color: #ffffff !important;
+      padding: 5px 8px;
+      background-color: #8EC640;
+    }
+    a {
+      font-size: 14px;
+      padding: 4px 8px;
+      color: #8ec640;
+      -moz-transition: color .15s;
+      -webkit-transition: color .15s;
+      -o-transition: color .15s;
+      transition: color .15s;
+      &:hover {
+        font-weight: normal;
+        font-size: 14px;
+        color: #ffffff !important;
+        padding: 4px 8px;
+        background-color: #8EC640;
+      }
+    }
+  }
+}
